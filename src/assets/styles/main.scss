@@ -1,0 +1,84 @@
+@use 'vuetify/settings' with (
+  $body-font-family: ('Montserrat', sans-serif),
+  $border-radius-root: 8px,
+);
+
+/* Montserrat is bundled locally via @fontsource; no external font CDN required. */
+@import '@fontsource/montserrat/400.css';
+@import '@fontsource/montserrat/500.css';
+@import '@fontsource/montserrat/600.css';
+@import '@fontsource/montserrat/700.css';
+
+
+
+:root { font-synthesis: none; }
+body { letter-spacing: .1px; }
+.app-main { background: rgb(var(--v-theme-background)); min-height: 100vh; }
+.app-drawer { border-right: 1px solid rgba(125, 119, 150, .1) !important; }
+.app-header { background: rgb(var(--v-theme-surface)) !important; border-bottom: 1px solid rgba(125, 119, 150, .1) !important; }
+.dashboard-card { border: 1px solid rgba(125, 119, 150, .10); box-shadow: 0 4px 22px rgba(40, 34, 78, .035) !important; }
+.page-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.theme-fab { position: fixed !important; right: 0; top: 47%; z-index: 1005; border-radius: 12px 0 0 12px !important; }
+.color-swatch { width: 39px; height: 39px; border-radius: 11px; border: 2px solid rgba(128,128,128,.2); display: inline-grid; place-items: center; cursor: pointer; }
+.color-swatch:focus-visible { outline: 3px solid #777; outline-offset: 3px; }
+.auth-background {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 15%, color-mix(in srgb, rgb(var(--v-theme-primary)) 56%, white) 0, transparent 36%),
+    linear-gradient(135deg,
+      color-mix(in srgb, rgb(var(--v-theme-primary)) 83%, #092650),
+      color-mix(in srgb, rgb(var(--v-theme-primary)) 66%, #04152c));
+  transition: background-color .2s ease;
+}
+.auth-card { overflow: hidden; border-radius: 22px !important; box-shadow: 0 28px 85px rgba(35, 22, 98, .22) !important; }
+.auth-intro {
+  background: #f0f5ff;
+  color: #172b4d;
+  min-height: 590px;
+}
+.auth-intro .text-medium-emphasis {
+  color: #435773 !important;
+  opacity: 1 !important;
+}
+.v-theme--appDark .auth-intro {
+  background: #17243b;
+  color: #f5f8ff;
+}
+.v-theme--appDark .auth-intro .text-medium-emphasis {
+  color: #c4d3e9 !important;
+  opacity: 1 !important;
+}
+.chart-bars { height: 225px; display: flex; gap: 12px; align-items: flex-end; }
+.chart-column { height: 100%; flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 9px; font-size: 11px; color: #9a97aa; }
+.chart-bar { width: min(32px, 100%); min-height: 8px; background: linear-gradient(0deg, rgb(var(--v-theme-primary)), color-mix(in srgb, rgb(var(--v-theme-primary)) 35%, white)); border-radius: 8px 8px 3px 3px; }
+@media (max-width: 959px) { .auth-intro { min-height: 170px; } .auth-intro .text-center { display: none; } }
+
+.login-color-swatch {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid rgba(127,127,127,.35);
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+}
+.login-color-swatch[aria-pressed="true"] { outline: 2px solid rgb(var(--v-theme-on-surface)); outline-offset: 2px; }
+.login-color-swatch:focus-visible { outline: 3px solid rgb(var(--v-theme-primary)); outline-offset: 3px; }
+
+/* Keep Vuetify's visual system; refine typography and icon weight globally. */
+:root { font-family: 'Montserrat', sans-serif; }
+html, body, #app, .v-application,
+.v-overlay-container, .v-overlay-container .v-overlay__content {
+  font-family: 'Montserrat', sans-serif;
+}
+.v-application { font-weight: 400; }
+.v-list-item-title, .v-field__input, .v-btn__content,
+.v-label, .v-data-table, .v-card-text, .v-dialog {
+  font-family: 'Montserrat', sans-serif;
+}
+.v-list-item-title, .v-field__input { font-weight: 400; }
+.v-btn__content, .v-label, .v-data-table th { font-weight: 500; }
+.page-heading, .text-h4, .text-h5, .text-h6 { font-weight: 600; }
+.app-drawer .v-list-item__prepend .v-icon { font-size: 21px; opacity: .83; }
+.app-drawer .v-list-item-title { font-weight: 500; letter-spacing: 0; }
+.app-header .v-icon { opacity: .88; }
